@@ -1,0 +1,7 @@
+.env
+*.log
+/target/
+/node_modules/
+.idea/
+.vscode/
+mysql_data/
