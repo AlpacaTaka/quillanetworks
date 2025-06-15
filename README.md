@@ -73,6 +73,19 @@ El sistema se despliega utilizando **Docker Compose**, y cuenta con tres configu
   - Esto pondrá en funcionamiento el sistema distribuido utilizando los dos servidores.
 ### 4. Automatización Futura del Despliegue
 - En el futuro, se proporcionará un script automatizado que facilitará el despliegue del sistema. Este script permitirá mapear las direcciones IP de los servidores y configurar automáticamente los servicios, simplificando todo el proceso de puesta en marcha.
-  
+
+## Solución para MYPE (Micro y Pequeña Empresa)
+La solución que se está está enfocada en proporcionar una infraestructura de Comunicaciones Unificadas (CU) para pequeñas y medianas empresas (MYPE) usando software libre. El objetivo es ofrecer una plataforma de gestión de comunicaciones (voz, video, chat, presencia y colaboración en documentos) que sea escalable, económica y flexible.
+
+## Licencia
+Este proyecto está basado en software libre, utilizando herramientas open source como Asterisk, Jitsi Meet, faltan las otras.
+
+Las licencias correspondientes para cada tecnología son:
+
+- **Asterisk:** Licencia GPL
+
+- **Jitsi Meet:** Licencia Apache 2.0
+
+
 
 
