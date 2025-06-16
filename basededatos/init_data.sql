@@ -1,10 +1,17 @@
 USE redesunificadas;
 
--- Usuario administrador
+-- Insertar roles
+INSERT INTO rol (nombre) VALUES ('admin');
+SET @rol_admin_id = LAST_INSERT_ID();
+
+INSERT INTO rol (nombre) VALUES ('cliente');
+SET @rol_cliente_id = LAST_INSERT_ID();
+
+-- Insertar usuario administrador con rol 'admin'
 INSERT INTO usuario 
-(nombre, rol, estado, eliminado, fecha_creacion) 
+(nombre, estado, eliminado, fecha_creacion, rol_id) 
 VALUES 
-('Administrador', 'admin', 1, 0, NOW());
+('Administrador', 1, 0, NOW(), @rol_admin_id);
 
 SET @admin_id = LAST_INSERT_ID();
 

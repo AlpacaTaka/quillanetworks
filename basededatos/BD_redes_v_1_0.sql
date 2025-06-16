@@ -16,16 +16,32 @@ CREATE SCHEMA IF NOT EXISTS `redesunificadas` DEFAULT CHARACTER SET utf8 ;
 USE `redesunificadas` ;
 
 -- -----------------------------------------------------
+-- Table `redesunificadas`.`rol`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `redesunificadas`.`rol` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `redesunificadas`.`usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `redesunificadas`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(100) NOT NULL,
-  `rol` VARCHAR(45) NOT NULL,
   `estado` TINYINT NOT NULL,
   `eliminado` TINYINT NOT NULL,
   `fecha_creacion` DATETIME NOT NULL,
-  PRIMARY KEY (`id`))
+  `rol_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_usuario_rol1_idx` (`rol_id` ASC) VISIBLE,
+  CONSTRAINT `fk_usuario_rol1`
+    FOREIGN KEY (`rol_id`)
+    REFERENCES `redesunificadas`.`rol` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
