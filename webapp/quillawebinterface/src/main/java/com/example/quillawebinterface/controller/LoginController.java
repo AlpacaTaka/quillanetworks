@@ -10,7 +10,12 @@ public class LoginController{
 
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "access/login";
+    }
+
+    @GetMapping("/test")
+    public String test(){
+        return "access/login";
     }
 
 
