@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebRTC SIP Client</title>
+    <script src="https://cdn.jsdelivr.net/npm/jssip@3.10.1/lib-es5/JsSIP.min.js"></script>
+</head>
+<body>
+<h1>WebRTC SIP Client</h1>
+<button onclick="connect()">Conectar</button>
+<button onclick="call()">Llamar 1000</button>
+<audio id="remoteAudio" autoplay></audio>
+
+<script>
+    let ua;
+    function connect() {
+        const socket = new JsSIP.WebSocketInterface('ws://127.0.0.1:8088/ws');
+        ua = new JsSIP.UA({
+            uri: 'sip:webrtc_client@127.0.0.1',
+            password: 'clave123',
+            sockets: [socket],
+            register: true
+        });
+
+        ua.on('registered', () => {
+            console.log('Registrado con Asterisk');
+        });
+
+        ua.on('newRTCSession', (data) => {
+            const session = data.session;
+            if (data.originator === 'remote') {
+                session.answer();
+            }
+            session.on('peerconnection', (e) => {
+                e.peerconnection.ontrack = (ev) => {
+                    document.getElementById('remoteAudio').srcObject = ev.streams[0];
+                };
+            });
+        });
+
+        ua.start();
+    }
+
+    function call() {
+        const session = ua.call('sip:1000@127.0.0.1', {
+            mediaConstraints: { audio: true, video: false }
+        });
+    }
+</script>
+</body>
+</html>
