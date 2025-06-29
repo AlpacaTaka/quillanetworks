@@ -26,6 +26,6 @@ public class SalaVideo {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "sala")
-    private List<RegistroSalas> registros;
+    @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
+    private List<RegistroSalas> registroSalas;
 }

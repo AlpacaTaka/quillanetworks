@@ -15,7 +15,7 @@ public class ExtensionSip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "numero_ext", nullable = false, length = 10)
+    @Column(name = "numero_ext", nullable = false, length = 10, unique = true)
     private String numeroExt;
 
     @Column(nullable = false, length = 100)
