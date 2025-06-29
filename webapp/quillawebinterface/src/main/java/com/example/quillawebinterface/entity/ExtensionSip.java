@@ -30,4 +30,13 @@ public class ExtensionSip {
 
     @OneToMany(mappedBy = "destinoExt")
     private List<RegistroLlamadas> llamadasEntrantes;
+
+    // Constructores, getters y setters
+    public ExtensionSip() {}
+
+    public ExtensionSip(String numeroExt, String clave, Usuario usuario) {
+        this.numeroExt = numeroExt;
+        this.clave = clave;
+        this.usuario = usuario;
+    }
 }

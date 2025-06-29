@@ -26,4 +26,13 @@ public class Credencial {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
+    // Constructores, getters y setters
+    public Credencial() {}
+
+    public Credencial(String correo, String password, Usuario usuario) {
+        this.correo = correo;
+        this.password = password;
+        this.usuario = usuario;
+    }
+
 }

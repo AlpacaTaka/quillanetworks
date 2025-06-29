@@ -28,4 +28,13 @@ public class SalaVideo {
 
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
     private List<RegistroSalas> registroSalas;
+
+    // Constructores, getters y setters
+    public SalaVideo() {}
+
+    public SalaVideo(String nombreSala, Usuario usuario) {
+        this.nombreSala = nombreSala;
+        this.usuario = usuario;
+        this.fechaCreacion = LocalDateTime.now();
+    }
 }
