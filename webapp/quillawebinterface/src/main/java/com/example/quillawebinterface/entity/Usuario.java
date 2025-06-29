@@ -52,4 +52,75 @@ public class Usuario {
         this.fechaCreacion = LocalDateTime.now();
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    public Boolean getEliminado() {
+        return eliminado;
+    }
+
+    public void setEliminado(Boolean eliminado) {
+        this.eliminado = eliminado;
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    public Credencial getCredencial() {
+        return credencial;
+    }
+
+    public void setCredencial(Credencial credencial) {
+        this.credencial = credencial;
+    }
+
+    public ExtensionSip getExtensionSip() {
+        return extensionSip;
+    }
+
+    public void setExtensionSip(ExtensionSip extensionSip) {
+        this.extensionSip = extensionSip;
+    }
+
+    public List<SalaVideo> getSalasVideo() {
+        return salasVideo;
+    }
+
+    public void setSalasVideo(List<SalaVideo> salasVideo) {
+        this.salasVideo = salasVideo;
+    }
 }
